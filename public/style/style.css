@@ -1,0 +1,84 @@
+:root {
+  --index: calc(1vw + 1vh);
+  --base-100: #fafafa;
+  --base-200: #e8e6e7;
+  --base-300: #d3d2d2;
+  --base-400: #0f0f0f;
+}
+
+[x-cloak] { display: none !important; }
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'header-font';
+    src: url(../fonts/CormorantSC-Regular.woff2);
+}
+
+body, html {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll; 
+  scrollbar-width: none;
+}
+
+
+.building-wrapper {
+    position: relative;
+     overflow: visible;
+}
+
+.building-map{
+  width:100%;
+  height:auto;
+}
+
+
+.zone{
+  cursor:pointer;
+  fill:transparent;
+  transition:fill-opacity .25s;
+}
+
+
+.zone.available:hover{
+  fill:#2ecc71;
+}
+
+
+.zone.sold:hover{
+  fill:#D9D9D9;
+}
+
+
+
+#mapTooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 9999;
+    white-space: nowrap;
+}
+
+#mapTooltip.active {
+    opacity: 1;
+}
+
+#apartment-info {
+  position: absolute;     
+  z-index: 9999;           
+  pointer-events: none;     
+  display: none;        
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  width: 220px;
+}
