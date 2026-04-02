@@ -12,9 +12,10 @@
         <p class="text-center text-gray-600 text-sm max-w-xs">Prostredníctvom nášho webu, alebo po konzultácií s maklérom si vyberte váš nový byt</p>
     </div>
     <div class="finance-item flex flex-col items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-11 mb-2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"class="size-11 mb-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
         </svg>
+
         <h4 class="font-[header-font] text-xl text-center leading-5"><span class="text-3xl font-semibold">20%</span><br>Financovanie bytov</h4>
         <p class="text-center text-gray-600 text-sm max-w-xs">Pri podpise zmluvy o budúcej kúpnej zmluve</p>
     </div>

@@ -19,34 +19,37 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
 
-    const zones = document.querySelectorAll('.zone');
-    const tooltip = document.getElementById('mapTooltip');
+  const zones = document.querySelectorAll('.zone');
+  const tooltip = document.getElementById('mapTooltip');
 
-    zones.forEach(zone => {
+  zones.forEach(zone => {
 
-        zone.addEventListener('mouseenter', () => {
-            const info = zone.dataset.info;
-            tooltip.innerHTML = info;
-            tooltip.classList.add('active');
-        });
-
-       zone.addEventListener('mousemove', (e) => {
-            tooltip.style.left = e.clientX + 20 + 'px';
-            tooltip.style.top = e.clientY + 20 + 'px';
-        });
-
-        zone.addEventListener('mouseleave', () => {
-            tooltip.classList.remove('active');
-        });
-
-        zone.addEventListener('click', () => {
-            const url = zone.dataset.url;
-            if (url) window.location.href = url;
-        });
-
+    zone.addEventListener('mouseenter', () => {
+      const info = zone.dataset.info;
+      tooltip.innerHTML = info;
+      tooltip.classList.add('active');
     });
+
+    zone.addEventListener('mousemove', (e) => {
+      const offsetX = 20;
+      const offsetY = 20;
+
+      tooltip.style.left = e.clientX + offsetX + 'px';
+      tooltip.style.top = e.clientY + offsetY + 'px';
+    });
+
+    zone.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('active');
+    });
+
+    zone.addEventListener('click', () => {
+      const url = zone.dataset.url;
+      if (url) window.location.href = url;
+    });
+
+  });
 
 });
 </script>

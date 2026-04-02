@@ -52,23 +52,37 @@ body, html {
   fill:#D9D9D9;
 }
 
-
-
-#mapTooltip {
-    position: absolute;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    padding: 8px 12px;
-    font-size: 14px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    z-index: 9999;
-    white-space: nowrap;
+.zone-park {
+  cursor:pointer;
+  fill:transparent;
+  transition:fill-opacity .25s;
 }
 
+.zone-park.available {
+  fill:#2ecc71;
+}
+
+.zone-park.available:hover {
+  fill:#2ecc70a8;
+}
+
+.zone-park.sold{
+  fill:#D9D9D9;
+}
+
+#mapTooltip {
+  position: fixed; 
+  pointer-events: none; 
+  background: rgb(0, 0, 0);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: opacity 0.1s ease;
+  opacity: 0;
+  z-index: 9999;
+}
 #mapTooltip.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 #apartment-info {

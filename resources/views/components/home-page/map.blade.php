@@ -1,86 +1,162 @@
- <div class="flex my-10 md:my-30 flex-col gap-2 items-center">
-    <h2 class="font-[header-font] text-center text-4xl md:text-5xl max-w-3xl">Localita</h2>
+<div class="interactive-map">
+
+  <div class="map-viewer">
+    <div class="map-wrapper">
+
+      <div class="map-zoom-0">
+        <img src="./images/for_map/mapik_corrib.webp" class="object-cover">
+      </div>
+
+      <div class="map-zoom-1">
+        <img src="./images/for_map/Group 613.jpg">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-area bg-[#F2F1EC] space-y-12">
+    <div class="content-wrapper space-y-8 pt-10">
+      <h3 class="text-3xl font-[header-font]">Zelená oáza v meste.</h3>
+      <p class="text-md">Hoci ste v srdci diania, v okolí domu sme zachovali dostatok zelene pre oddych a regeneráciu.
+      <br>Priamo v areáli sme kládli dôraz na parkovú úpravu a estetickú výsadbu, ktorá vytvára
+      prirodzenú bariéru od mestského prostredia. Je to priestor, kde si môžete v pokoji prečítať
+      knihu na lavičke, zatiaľ čo vaše deti sa hrajú na modernom a bezpečnom ihrisku.</p>
+      <img src="./images/for_map/1.webp" alt="" class="w-full">
+       <div class="h-[1px] w-full bg-black/80"></div>
+    </div>
+
+    <div class="content-wrapper space-y-8">
+      <h3 class="text-3xl font-[header-font]">Všetko dôležité pre vaše zdravie.</h3>
+      <p class="text-md">Veríme, že skutočný komfort bývania sa meria aj tým, ako rýchlo a pohodlne vybavíte
+      dôležité záležitosti spojené so zdravím.<br>Zabudnite na štartovanie auta či hľadanie parkoviska pred poliklinikou, keďže tá sa nachádza priamo v areáli, ušetríte čas dochádzaním. Neďaleká
+      Lekáreň Corrib je vám tiež k dispozícii.</p>
+       <img src="./images/for_map/2.webp" alt=""  class="w-full">
+       <div class="h-[1px] w-full bg-black/80"></div>
+    </div>
+
+    <div class="content-wrapper space-y-8">
+      <h3 class="text-3xl font-[header-font]">Svet relaxu a zábavy.</h3>
+      <p class="text-md">CLen pár minút cesty od vášho nového domova sa otvárajú brány do sveta vodnej zábavy
+      AquaCity Poprad – 13 bazénov, tobogany a špičkové wellness. Ideálne miesto na
+      regeneráciu po turistike, doprajte si saunový svet alebo relaxačné masáže. Ak hľadáte
+      program na víkend, detské bazény a animácie sú zárukou, že vaše deti sa nebudú nudiť v
+      žiadnom počasí.</p>
+      <img src="./images/for_map/3.webp" alt="" class="w-full object-cover">
+      <div class="h-[1px] w-full bg-black/80"></div>
+    </div>
+
+    <div class="content-wrapper space-y-8  pb-10">
+      <h3 class="text-3xl font-[header-font]">Hokejové srdce mesta.</h3>
+      <p class="text-md">Zažite pravú hokejovú atmosféru v slovenskej extralige. Môžete si vychutnať zápasy
+      domáceho HK Poprad v jednom z najmodernejších hokejových stánkov pod Tatrami.<br>Bývanie
+      v Corrib Tower znamená, že k pulzujúcej atmosfére popradského hokeja to máte doslova na
+      skok. Zimný štadión mesta Poprad sa nachádza v bezprostrednej blízkosti, čo z vášho
+      nového domova robí ideálnu adresu pre každého športového nadšenca.</p>
+       <img src="./images/for_map/4.webp" alt="" class="w-full object-cover">
+    </div>
+  </div>
 </div>
-<section class="relative w-full h-full">
-  <div class="building-wrapper relative flex justify-center">
-    <img src="./images/about/mapik.png" alt="">   
-  </div>
-  <div class="relative flex flex-col justify-center items-center mt-30">
-    <h2 class="font-[header-font] text-center text-4xl md:text-5xl max-w-6xl">
-      Architektúra, ktorá myslí na vaše pohodlie a 
-      investícia do budúcnosti
-    </h2>
-    <p class="max-w-3xl mx-auto text-center mt-10">
-      Byt v <strong>Corrib Tower</strong> nie je len miestom na bývanie, ale aj <strong>výhodnou investíciou</strong>. Lokalita
-      v centre Popradu a <strong>výhľad na Vysoké Tatry</strong> zaručujú dlhodobú hodnotu nehnuteľnosti.
-      <br>
-      Naším cieľom bolo vytvoriť miesto, kde máte všetko na dosah, a pritom si zachovávate svoje
-      <strong>súkromie a pokoj</strong>.
-    </p>
-  </div>
-</section>
 
 <style>
-  
-#mapTooltipMap {
-   position: fixed;
-    background: white;
-    color: black;
-    padding: 6px 10px;
-    font-size: 14px;
-    text-align: center;
-    width: 8%;
-    pointer-events: none;
-    opacity: 0;
-    transition: 0.2s;
-    z-index: 999;
+body {
+  overflow: visible;
+}
+.interactive-map {
+  display: flex;
 }
 
-.building-wrapper svg {
-    position: relative;
-    z-index: 1;
+@media (max-width: 768px) {
+  .interactive-map {
+    flex-direction: column;
+  }
 }
 
-#mapTooltipMap {
-    z-index: 9999;
+/* ЛЕВО */
+.map-viewer {
+  position: sticky;
+  top: 0;
+  width: 65%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-#mapTooltipMap.active {
-    opacity: 1;
-}
-.icon_map:hover path:first-child {
-    fill: black;
-}
-.icon_map {
-    cursor: pointer;
-    pointer-events: all;
+/* ПРАВО */
+.scroll-area {
+  width: 35%;
+  padding: 40px;
 }
 
-rect {
-    pointer-events: none;
+@media (max-width: 768px) {
+  .map-viewer {
+    position: sticky; 
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .scroll-area {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* КАРТА */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.map-zoom-0,
+.map-zoom-1 {
+  position: absolute;
+  inset: 0;
+}
+
+.map-zoom-0 img,
+.map-zoom-1 img {
+  width: 100%;
+  height: 100%;
 }
 </style>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const icons_map = document.querySelectorAll('.icon_map');
-    const tooltip = document.getElementById('mapTooltipMap');
+  document.addEventListener("DOMContentLoaded", () => {
 
-    icons_map.forEach(icon_map => {
-        icon_map.addEventListener('mouseenter', (e) => {
-            tooltip.innerHTML = icon_map.dataset.info;
-            tooltip.classList.add('active');
-        });
+  gsap.registerPlugin(ScrollTrigger);
 
-        icon_map.addEventListener('mousemove', (e) => {
-            tooltip.style.left = e.pageX - 50 + 'px';
-            tooltip.style.top = e.pageY - 100 + 'px';
-        });
+  const map0 = document.querySelector(".map-zoom-0");
+  const map1 = document.querySelector(".map-zoom-1");
 
-        icon_map.addEventListener('mouseleave', () => {
-            tooltip.classList.remove('active');
-        });
+  const sections = document.querySelectorAll(".content-wrapper");
+
+  gsap.set(map0, { opacity: 1, scale: 1 });
+  gsap.set(map1, { opacity: 0, scale: 1.2 });
+
+  sections.forEach((section, index) => {
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "bottom center",
+      end: "bottom center",
+
+      onEnter: () => {
+        if (index === 1) {
+          gsap.to(map0, { opacity: 0, scale: 1.1, duration: 0.6 });
+          gsap.to(map1, { opacity: 1, scale: 1, duration: 0.6 });
+        }
+      },
+
+      onEnterBack: () => {
+        if (index === 0) {
+          gsap.to(map0, { opacity: 1, scale: 1, duration: 0.6 });
+          gsap.to(map1, { opacity: 0, scale: 1.2, duration: 0.6 });
+        }
+      }
+
     });
+
+  });
+
 });
 </script>

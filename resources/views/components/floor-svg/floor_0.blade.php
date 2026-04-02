@@ -12,7 +12,6 @@
             @if(isset($apt['count_room'])) data-rooms="{{ $apt['count_room'] }}" @endif
             @if(isset($apt['size'])) data-area="{{ $apt['size'] }}" @endif
             data-status="{{ $status }}"
-            @if($status === 'available') data-url="/apartment/{{$apt['room']}}" @endif
             fill-opacity="0.26"
         />
     @endforeach

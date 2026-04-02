@@ -11,10 +11,10 @@
         </button>
     </div>
 
-    <nav class="hidden md:flex gap-8 text-md absolute left-60 top-1/2 -translate-y-1/2 z-50">
-        <a href="" class="nav-link text-white text-lg hover:text-black/50 transition font-[header-font] ">Domov</a>
-        <a href="#benefity" class="nav-link text-white text-lg hover:text-black/50 transition font-[header-font] " data-scroll="#benefity">Benefity</a>
-        <a href="#financovanie" class="nav-link text-white text-lg hover:text-black/50 transition font-[header-font] " data-scroll="#financovanie">Financovanie</a>
+    <nav class="hidden md:flex gap-8 text-md absolute left-60 top-1/2 -translate-y-1/2 z-50 ">
+        <a href="" class="nav-link link-center-line">Domov</a>
+        <a href="{{route('corrib.bild')}}" class="nav-link link-center-line">Ponuka bytov</a>
+        <a href="#benefity" class="nav-link link-center-line" data-scroll="#benefity">Benefity</a>
     </nav>
 
     <div class="flex justify-center w-full absolute left-1/2 -translate-x-1/2 z-40 pointer-events-none">
@@ -22,9 +22,9 @@
     </div>
 
     <nav class="hidden md:flex gap-8 text-md absolute right-60 top-1/2 -translate-y-1/2 z-50">
-        <a href="" class="nav-link text-white text-lg hover:text-black/50 transition font-[header-font] ">Galéria</a>
-        <a href="#kontakt" class="nav-link text-white transition text-lg hover:text-black/50 font-[header-font] " data-scroll="#kontakt">Kontakt</a>
-        <a href="" class="nav-link text-white transition hover:text-black/50 text-lg font-[header-font] ">Ponuka bytov</a>
+        <a href="#financovanie" class="nav-link link-center-line" data-scroll="#financovanie">Financovanie</a>
+        <a href="{{route('gallery')}}" class="nav-link link-center-line">Galéria</a>
+        <a href="#kontakt" class="nav-link link-center-line" data-scroll="#kontakt">Kontakt</a>
     </nav>
 
     <div class="block md:hidden relative z-50">
@@ -54,7 +54,7 @@
 }
 
 .header-scrolled {
-    background: rgba(44, 44, 44, 0.85);
+    background: rgba(44, 44, 44, 0.18);
     backdrop-filter: blur(10px);
 }
 </style>

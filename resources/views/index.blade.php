@@ -10,5 +10,5 @@
     <x-home-page.financovanie></x-home-page.financovanie>
     <x-home-page.galeria></x-home-page.galeria>
     <x-home-page.c-t-a></x-home-page.c-t-a>
-     <x-main-component.kontakt></x-main-component.kontakt>
+    <x-main-component.kontakt></x-main-component.kontakt>
 @endsection

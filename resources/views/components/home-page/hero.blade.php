@@ -15,9 +15,9 @@
 
     <div class="relative z-10 flex flex-col items-center px-6">
       <h1 class="text-5xl md:text-6xl  max-w-3xl font-[header-font] uppercase text-white mb-6 md:leading-15" >
-        Moderný domov s Tatrami ako na dlani
+        Moderný domov <br>s Tatrami ako na dlani
       </h1>
-      <a href="" class="bg-black hover:bg-white text-gray-100 hover:text-black uppercase  px-6 py-2  transition cursor-pointer duration-300">
+      <a href="{{route('corrib.bild')}}" class="bg-black hover:bg-white text-gray-100 hover:text-black uppercase  px-6 py-2  transition cursor-pointer duration-300">
         Vybrať byt
        
       </a>
@@ -26,7 +26,7 @@
       <span class="text-white text-xs tracking-[0.3em] uppercase">
         Preskúmajte viac
       </span>
-      <div class="relative w-[1px] h-24 bg-white/30 overflow-hidden">
+      <div class="relative w-[1px] h-[calc((1vw+1vh)*6)] md:h-24 bg-white/30 overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-6 bg-white animate-scroll-line"></div>
       </div>
     </div>
