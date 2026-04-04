@@ -17,9 +17,15 @@
       <h1 class="text-5xl md:text-6xl  max-w-3xl font-[header-font] uppercase text-white mb-6 md:leading-15" >
         Moderný domov <br>s Tatrami ako na dlani
       </h1>
-      <a href="{{route('corrib.bild')}}" class="bg-black hover:bg-white text-gray-100 hover:text-black uppercase  px-6 py-2  transition cursor-pointer duration-300">
-        Vybrať byt
-       
+      <a href="{{route('corrib.bild')}}"
+        class="relative inline-flex items-center justify-center px-8 py-3 uppercase tracking-wide text-sm text-white border border-white/20 overflow-hidden group transition">
+
+        <span class="relative z-10 group-hover:text-black transition duration-300">
+          Vybrať byt
+        </span>
+
+        <span class="absolute inset-0 bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300"></span>
+
       </a>
     </div>
     <div class="absolute flex flex-col bottom-10 md:right-1/2 md:translate-x-1/2 flex items-center gap-4 z-10">

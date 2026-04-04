@@ -5,7 +5,7 @@
           <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
               Vyberte si priestor pre vašu ambulanciu
           </h2>
-          <p class="text-black text-center md:text-xl"><span class="font-[header-font]">Corrib Tower</span> - <span class="font-semibold font-[header-font]">{{$floor->name}}</span></p>
+          <p class="text-black text-center md:text-md"><span class="">Corrib Tower</span> - <span class="font-semibold ">{{$floor->name}}</span></p>
     </div>
     <div class="building-wrapper w-full md:px-10 md:max-w-7xl mx-auto">
       @if($floor->floor_number >= 6 && $floor->floor_number <=9)
@@ -15,7 +15,7 @@
       @endif
     </div>
     <div id="apartment-info"
-            class="absolute hidden bg-white  p-4 w-56 pointer-events-none z-50">
+            class="absolute hidden bg-white  p-4 w-56 pointer-events-none z-40">
             <h3 id="info-name" class="font-semibold text-lg"></h3>
             <p id="info-rooms"></p>
             <p id="info-area"></p>

@@ -11,9 +11,9 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('style/style.css') }}?v={{ filemtime(public_path('style/style.css')) }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    @vite(['resources/css/app.css', 'resources/js/app.js', ])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-[#E2E2E2]/25">
+<body class="bg-white">
     <x-main-component.header></x-main-component.header>
     <main>
         @yield('content')

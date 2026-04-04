@@ -8,13 +8,13 @@
       </div>
 
       <div class="map-zoom-1">
-        <img src="./images/for_map/Group 613.jpg">
+        <img src="./images/for_map/map_2.jpg">
       </div>
 
     </div>
   </div>
 
-  <div class="scroll-area bg-[#F2F1EC] space-y-12">
+  <div class="scroll-area space-y-12">
     <div class="content-wrapper space-y-8 pt-10">
       <h3 class="text-3xl font-[header-font]">Zelená oáza v meste.</h3>
       <p class="text-md">Hoci ste v srdci diania, v okolí domu sme zachovali dostatok zelene pre oddych a regeneráciu.

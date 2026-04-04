@@ -175,23 +175,26 @@ document.addEventListener("DOMContentLoaded", () => {
         video.muted = true;
         video.playsInline = true;
 
-        if (video.readyState < 2) {
+        const tryPlay = () => {
             video.load();
-        }
+            video.play().catch(() => {});
+        };
 
-        const playPromise = video.play();
+        video.currentTime = 0;
 
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-            });
+        if (video.readyState >= 2) {
+            tryPlay();
+        } else {
+            video.addEventListener('canplay', tryPlay, { once: true });
         }
     }
 
     function safePause(video) {
         if (!video) return;
-        if (!video.paused) {
-            video.pause();
-        }
+
+        video.pause();
+
+        video.currentTime = 0;
     }
 
     let currentIndex = -1;
@@ -209,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             onUpdate: self => {
                 const progress = self.progress;
+
                 const newIndex = Math.min(
                     total - 1,
                     Math.floor(progress * total)

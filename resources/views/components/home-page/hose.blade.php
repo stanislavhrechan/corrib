@@ -4,7 +4,9 @@
       <p class="text-md max-w-6xl mx-auto  text-gray-600">Od útulných dvojizbových bytov až po veľkorysé rodinné rezidencie.</p>
     </div>
     <div class="building-wrapper">
+       <div class="pointer-events-none absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent z-10"></div>
         @includeIf('components.floor-svg.home')
+        <div class="pointer-events-none absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent z-10"></div>
         <div id="mapTooltip"></div>
     </div>
 

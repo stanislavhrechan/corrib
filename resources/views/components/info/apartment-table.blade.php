@@ -30,7 +30,7 @@
                 <td class="px-4 py-3">{{ $apt->name }}</td>
                 <td class="px-4 py-3">{{ $apt->floor_id }}</td>
                 <td class="px-4 py-3"> {{ $apt->rooms
-                    ->whereNotIn('name', ['Balkón', 'Loggia'])
+                    ->whereNotIn('name', ['Balkón', 'Loggia', 'Pivnica'])
                     ->sum('area') 
                 }} m²</td>
                 <td class="px-4 py-3"> {{
@@ -38,8 +38,10 @@
                         ->whereIn('name', ['Balkón', 'Loggia'])
                         ->sum('area')
                 }} m²</td>
-                 <td class="px-4 py-3"></td>
-                <td class="px-4 py-3">{{ $apt->rooms->sum('area') }} m²</td>
+                 <td class="px-4 py-3">{{
+                    optional($apt->rooms->firstWhere('name', 'Pivnica'))->area > 0 ? $apt->rooms->firstWhere('name', 'Pivnica')->area . 'm²' : 'Nepridana'
+                }} </td>
+                <td class="px-4 py-3">{{ $apt->rooms->whereNotIn('name', 'Pivnica')->sum('area') }} m²</td>
 
                 <td class="px-4 py-3 font-semibold">
                     Cena v RK

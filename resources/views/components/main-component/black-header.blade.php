@@ -1,6 +1,6 @@
-<header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-50 md:py-8 ">
-  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative">
-    <div class="block md:hidden relative z-50">
+<header id="main-header" class="fixed top-0 left-0 w-full z-60 bg-50 md:py-8">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-60">
+    <div class="block md:hidden relative z-60">
         <button class="px-4 py-2 text-xs rounded-md 
             bg-[#947D6D]/25 backdrop-blur-md text-white flex items-center
             cursor-pointer           
@@ -11,7 +11,7 @@
         </button>
     </div>
 
-    <nav class="hidden md:flex gap-8 text-md absolute left-60 top-1/2 -translate-y-1/2 z-50">
+    <nav class="hidden md:flex gap-8 text-md absolute left-60 top-1/2 -translate-y-1/2 z-60">
         <a href="/" class="nav-link link-center-line-black">Domov</a>
         <a href="{{route('corrib.bild')}}" class="nav-link link-center-line-black">Ponuka bytov</a>
         <a href="#benefity" class="nav-link link-center-line-black" data-scroll="#benefity">Benefity</a>
@@ -21,13 +21,13 @@
         <img src="/images/dark_logo.svg" alt="Corrib Tower Logo" class="w-16 md:w-28">
     </div>
 
-    <nav class="hidden md:flex gap-8 text-md absolute right-60 top-1/2 -translate-y-1/2 z-50">
+    <nav class="hidden md:flex gap-8 text-md absolute right-60 top-1/2 -translate-y-1/2 z-60">
         <a href="#financovanie" class="nav-link link-center-line-black" data-scroll="#financovanie">Financovanie</a>
         <a href="{{route('gallery')}}" class="nav-link link-center-line-black">Galéria</a>
         <a href="#kontakt" class="nav-link link-center-line-black" data-scroll="#kontakt">Kontakt</a>
     </nav>
 
-    <div class="block md:hidden relative z-50">
+    <div class="block md:hidden relative z-60">
         <button id="menu-btn" class="px-2 py-2 text-xs rounded-md 
             bg-[#947D6D]/25 backdrop-blur-md text-white flex items-center
             cursor-pointer hover:bg-[#947D6D]/80 transition uppercase">

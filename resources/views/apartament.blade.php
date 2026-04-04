@@ -5,7 +5,7 @@
         <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
             Vyberte si priestor pre vašu ambulanciu
         </h2>
-          <p class="text-black text-center md:text-xl mb-10"><span class="font-[header-font]">Corrib Tower</span> - <span class="font-[header-font]">{{$apartment['floor_id']}}</span> - <span class="font-[header-font] font-semibold">{{$apartment['name']}}</span></p>
+          <p class="text-black text-center md:text-md mb-10"><span class="">Corrib Tower</span> - <span class="">{{$apartment['floor_id']}}</span> - <span class=" font-semibold">{{$apartment['name']}}</span></p>
 
         <div class="grid md:grid-cols-[1fr_1fr] gap-8">
            
