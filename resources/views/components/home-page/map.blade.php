@@ -4,11 +4,11 @@
     <div class="map-wrapper">
 
       <div class="map-zoom-0">
-        <img src="./images/for_map/mapik_corrib.webp" class="object-cover">
+        <img src="./images/for_map/map_1.webp" class="object-cover">
       </div>
 
       <div class="map-zoom-1">
-        <img src="./images/for_map/map_2.jpg">
+        <img src="./images/for_map/Group 613.jpg">
       </div>
 
     </div>

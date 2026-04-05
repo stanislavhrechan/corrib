@@ -22,6 +22,7 @@
             </div>
         </div>
     </section>
+    <x-info.apartment-table :apartments="$apartments"></x-info.apartment-table>
     <x-info.parkovisko :buildings="$buildings"/>
     <x-main-component.kontakt></x-main-component.kontakt>
 

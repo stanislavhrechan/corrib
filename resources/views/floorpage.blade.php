@@ -5,7 +5,7 @@
           <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
               Vyberte si priestor pre vašu ambulanciu
           </h2>
-          <p class="text-black text-center md:text-md"><span class="">Corrib Tower</span> - <span class="font-semibold ">{{$floor->name}}</span></p>
+          <p class="text-black text-center md:text-md"><a href="{{route('corrib.bild')}}">Corrib Tower</a> - <span class="font-semibold ">{{$floor->name}}</span></p>
     </div>
     <div class="building-wrapper w-full md:px-10 md:max-w-7xl mx-auto">
       @if($floor->floor_number >= 6 && $floor->floor_number <=9)
@@ -36,7 +36,7 @@
 </section>
 
 <x-info.apartment-table :apartments="$apartments"></x-info.apartment-table>
- <x-info.parkovisko :buildings="$buildings"/>
+<x-info.parkovisko :buildings="$buildings"/>
 <x-main-component.kontakt></x-main-component.kontakt>
 
 

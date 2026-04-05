@@ -44,8 +44,8 @@
             <h3 class="text-2xl font-bold mt-2">BENARD GROUP s.r.o.</h3>
             <div class="mt-6 space-y-1 text-sm">
               <p><span class="font-semibold mr-2">M:</span>+421 907 211 103</p>
-              <p><span class="font-semibold mr-2">E:</span>troscakova@benard.sk</p>
-              <p><span class="font-semibold mr-2">A:</span>troscakova@benard.sk</p>
+              <p><span class="font-semibold mr-2">E:</span>info@benard.sk</p>
+              <p><span class="font-semibold mr-2">A:</span>Karpatská 5995/50, 058 01 Poprad</p>
             </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">

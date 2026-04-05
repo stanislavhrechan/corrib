@@ -108,12 +108,10 @@ $cards = [
             {{-- MEDIA --}}
             @if(!empty($card['video']))
                 <video class="card-video absolute inset-0 w-full h-full object-cover"
-                muted
+                 muted
                 autoplay
                 loop
-                playsinline
-                webkit-playsinline
-                preload="auto">
+                playsinline>
                     <source src="{{ $card['video'] }}" type="video/mp4">
                 </video>
             @else
@@ -162,42 +160,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById("sticky-cards-container");
     const cards = gsap.utils.toArray(".card");
-    const videos = gsap.utils.toArray(".card-video");
+    const videos = document.querySelectorAll(".card-video");
     const total = cards.length;
 
+    // 🔹 карточки (как было)
     gsap.set(cards, {
         xPercent: (i) => i === 0 ? 0 : 100
     });
-
-    function safePlay(video) {
-        if (!video) return;
-
-        video.muted = true;
-        video.playsInline = true;
-
-        const tryPlay = () => {
-            video.load();
-            video.play().catch(() => {});
-        };
-
-        video.currentTime = 0;
-
-        if (video.readyState >= 2) {
-            tryPlay();
-        } else {
-            video.addEventListener('canplay', tryPlay, { once: true });
-        }
-    }
-
-    function safePause(video) {
-        if (!video) return;
-
-        video.pause();
-
-        video.currentTime = 0;
-    }
-
-    let currentIndex = -1;
 
     const tl = gsap.timeline({
         defaults: { ease: "none" },
@@ -209,31 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
             scrub: 1,
             anticipatePin: 1,
             invalidateOnRefresh: true,
-
-            onUpdate: self => {
-                const progress = self.progress;
-
-                const newIndex = Math.min(
-                    total - 1,
-                    Math.floor(progress * total)
-                );
-
-                if (newIndex === currentIndex) return;
-
-                currentIndex = newIndex;
-
-                videos.forEach((video, i) => {
-
-                    if (!video) return;
-
-                    if (i === newIndex) {
-                        safePlay(video);
-                    } else {
-                        safePause(video);
-                    }
-
-                });
-            }
         }
     });
 
@@ -245,23 +189,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    function preloadVideos() {
-        videos.forEach(video => {
+    // 🔥 НОВАЯ ЛОГИКА ДЛЯ ВИДЕО (без GSAP)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+
             if (!video) return;
 
-            video.muted = true;
-            video.playsInline = true;
-            video.preload = "auto";
+            if (entry.isIntersecting) {
+                video.muted = true;
+                video.playsInline = true;
 
-            if (video.readyState < 2) {
-                video.load();
+                video.play().catch(() => {});
+            } else {
+                video.pause();
             }
         });
-    }
+    }, {
+        threshold: 0.6 // 60% карточки видно
+    });
 
-    preloadVideos();
-
- 
+    videos.forEach(video => {
+        observer.observe(video);
+    });
 
     // 🔹 resize fix
     let resizeTimeout;

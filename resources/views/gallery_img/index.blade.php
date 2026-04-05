@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container mx-auto py-10">
+    <div class="container mx-auto py-21">
 
         <div class="flex gap-4 justify-center mt-20">
             <button data-category="all" class="filter-btn active cursor-pointer">Všetko</button>
@@ -80,8 +80,22 @@
             btn.classList.add('active');
 
             const category = btn.dataset.category;
+
+            let defaultSub = null;
+
+            if(category === 'interier') {
+                defaultSub = '4i';
+            }
+
             history.pushState(null, '', `?category=${category}`);
-            loadGallery(category);
+            loadGallery(category, defaultSub);
+
+            setTimeout(() => {
+                if(defaultSub){
+                    const subBtn = document.querySelector(`[data-subcategory="${defaultSub}"]`);
+                    subBtn?.classList.add('active');
+                }
+            }, 100);
         });
     });
 

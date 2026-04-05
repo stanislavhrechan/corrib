@@ -4,7 +4,7 @@
     </h2>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-10 py-10  mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-5 md:px-10 py-10  mx-auto">
 
     <a href="/gallery_img?category=exterier" class="relative group overflow-hidden   shadow-lg">
         <img src="{{ asset('images/gallery/1.png') }}"
