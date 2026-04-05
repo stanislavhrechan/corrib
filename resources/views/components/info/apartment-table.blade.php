@@ -69,7 +69,7 @@
                         </td>
 
                         <td class="px-4 py-3">
-                            {{ $balconyArea }} m²
+                            {{ $balconyArea > 0 ? $balconyArea . ' m²' : 'Nepridaná' }}
                         </td>
 
                         <td class="px-4 py-3">
