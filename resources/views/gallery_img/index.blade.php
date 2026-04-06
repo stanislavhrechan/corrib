@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container mx-auto py-21">
+    <div class="container mx-auto py-10 md:py-21">
 
         <div class="flex gap-4 justify-center mt-20">
             <button data-category="all" class="filter-btn active cursor-pointer">Všetko</button>
@@ -9,12 +9,9 @@
             <button data-category="videa" class="filter-btn cursor-pointer">Videá</button>
         </div>
         <div id="subcat-container" class="flex gap-2 justify-center mb-6 mt-5"></div>
-        <div id="gallery-container" class="grid grid-cols-2 md:grid-cols-3 gap-5 mt-5 m-5">
+        <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5 m-5">
         
         </div>
-
-        
-
     </div>
 
     <script>

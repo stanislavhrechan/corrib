@@ -36,7 +36,7 @@
 
         <h4 class="font-[header-font] text-xl">
             Financovanie bytov
-            <br> 20%
+            <br> <span class="text-3xl">20%</span>
         </h4>
 
         <p class="text-gray-600 text-sm mt-3">
@@ -57,7 +57,7 @@
 
         <h4 class="font-[header-font] text-xl">
             Pri kolaudácii
-            <br> 80%
+            <br> <span class="text-3xl">80%</span>
         </h4>
 
         <p class="text-gray-600 text-sm mt-3">

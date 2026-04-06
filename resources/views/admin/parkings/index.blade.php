@@ -1,10 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="p-8">
+<div class="p-4 md:p-8">
 
-    <!-- HEADER -->
-    <div class="flex items-center justify-between mb-8">
+    <div class="flex md:flex-row flex-col gap-5 md:gap-0 md:items-center justify-between mb-8">
         <div>
             <h1 class="text-white text-2xl font-semibold">Buildings</h1>
             <p class="text-white/40 text-sm">
@@ -18,8 +17,7 @@
         </button>
     </div>
 
-    <!-- GRID -->
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
         @foreach($buildings as $building)
         <a href="{{ route('admin.buildings.show', $building->id) }}"
@@ -33,7 +31,7 @@
                     </h2>
 
                     <p class="text-white/40 text-sm mt-1">
-                        {{ $building->parkings->count() }} parkings
+                        {{ $building->parkings->count() }} parkovísk
                     </p>
                 </div>
 
@@ -49,14 +47,13 @@
 
 </div>
 
-<!-- ================= CREATE MODAL ================= -->
 
 <div id="buildingModal"
      class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50
             opacity-0 pointer-events-none transition duration-300">
 
     <div id="buildingModalBox"
-         class="w-[400px] bg-[#111] border border-white/10 p-6
+         class="w-[400px] bg-[#111] border border-white/10 p-6 mx-5 md:mx-0
                 scale-95 opacity-0 transition duration-300">
 
         <div class="flex justify-between mb-4">
@@ -88,14 +85,13 @@
     </div>
 </div>
 
-<!-- ================= EDIT MODAL ================= -->
 
 <div id="editBuildingModal"
      class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50
             opacity-0 pointer-events-none transition duration-300">
 
     <div id="editBuildingModalBox"
-         class="w-[400px] bg-[#111] border border-white/10 p-6
+         class="w-[400px] bg-[#111] border border-white/10 p-6 mx-5 md:mx-0
                 scale-95 opacity-0 transition duration-300">
 
         <h2 class="text-white text-lg mb-4">Edit Building</h2>
@@ -124,7 +120,6 @@
     </div>
 </div>
 
-<!-- ================= SCRIPT ================= -->
 
 <script>
 function toggleModal(modalId, boxId, show) {

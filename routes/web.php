@@ -54,4 +54,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/floor/apartment/store', [ApartmentAdminController::class, 'store'])->name('admin.floors.apartment.store');
 
     Route::post('/admin/floor/apartment/room/store', [RoomController::class, 'store'])->name('admin.floors.apartment.room.store');
+    Route::put('/admin/floor/apartment/room/{room}/update', [RoomController::class, 'update'])->name('admin.floors.apartment.room.update');
+    Route::delete('/admin/floor/apartment/room/{room}/destroy', [RoomController::class, 'destroy'])->name('admin.floors.apartment.room.destroy');
 });

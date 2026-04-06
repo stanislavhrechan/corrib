@@ -14,7 +14,7 @@
     <nav class="hidden md:flex gap-8 text-md absolute left-60 top-1/2 -translate-y-1/2 z-60">
         <a href="/" class="nav-link link-center-line-black">Domov</a>
         <a href="{{route('corrib.bild')}}" class="nav-link link-center-line-black">Ponuka bytov</a>
-        <a href="#benefity" class="nav-link link-center-line-black" data-scroll="#benefity">Benefity</a>
+        <a href="{{ url('/') }}#benefity" class="nav-link link-center-line-black" data-scroll="#benefity">Benefity</a>
     </nav>
 
     <div class="flex justify-center w-full absolute left-1/2 -translate-x-1/2 z-40 pointer-events-none">
@@ -22,7 +22,7 @@
     </div>
 
     <nav class="hidden md:flex gap-8 text-md absolute right-60 top-1/2 -translate-y-1/2 z-60">
-        <a href="#financovanie" class="nav-link link-center-line-black" data-scroll="#financovanie">Financovanie</a>
+        <a href="{{ url('/') }}#financovanie" class="nav-link link-center-line-black" data-scroll="#financovanie">Financovanie</a>
         <a href="{{route('gallery')}}" class="nav-link link-center-line-black">Galéria</a>
         <a href="#kontakt" class="nav-link link-center-line-black" data-scroll="#kontakt">Kontakt</a>
     </nav>
@@ -39,7 +39,79 @@
 
   </div>
 </header>
+<div id="mobile-menu"
+     class="fixed inset-0 bg-black/90 backdrop-blur-md z-50
+            opacity-0 pointer-events-none transition duration-300">
 
+    <div class="flex flex-col items-center justify-center h-full gap-6 text-white text-lg uppercase">
+
+        <a href="{{ url('/') }}" class="mobile-link  font-[header-font]">Domov</a>
+        <a href="{{ route('corrib.bild') }}" class="mobile-link  font-[header-font]">Ponuka bytov</a>
+        <a href="{{ url('/') }}#benefity" class="mobile-link  font-[header-font]">Benefity</a>
+        <a href="{{ url('/') }}#financovanie" class="mobile-link  font-[header-font]">Financovanie</a>
+        <a href="{{ route('gallery') }}" class="mobile-link  font-[header-font]">Galéria</a>
+        <a href="#kontakt" class="mobile-link  font-[header-font]">Kontakt</a>
+
+    </div>
+</div>
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+let isOpen = false;
+let scrollPosition = 0;
+
+
+function lockScroll() {
+    scrollPosition = window.scrollY;
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
+}
+
+function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+
+    window.scrollTo(0, scrollPosition);
+}
+
+
+function openMenu() {
+    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+    lockScroll();
+    isOpen = true;
+}
+
+function closeMenu() {
+    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+    unlockScroll();
+    isOpen = false;
+}
+
+function toggleMenu() {
+    if (isOpen) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+}
+
+
+menuBtn.addEventListener('click', toggleMenu);
+
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+        closeMenu();
+    }
+});
+</script>
 <style>
 #main-header {
     transition: transform 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease;

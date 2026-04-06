@@ -7,8 +7,8 @@
     <nav class="flex flex-col md:flex-row items-center justify-center mt-6 text-white uppercase text-md  tracking-wider">
       <a href="/" class="hover:text-gray-400 transition font-[header-font] z-10 md:after:content-['•'] md:after:mx-2 md:after:text-gray-400">Domov</a>
       <a href="{{route('corrib.bild')}}" class="hover:text-gray-400 transition font-[header-font] z-10  md:after:content-['•'] md:after:mx-2 md:after:text-gray-400">Ponuka bytov</a>
-      <a href="#benefity" class="hover:text-gray-400 transition font-[header-font] z-10 md:after:content-['•'] md:after:mx-2 md:after:text-gray-400">Benefity</a>
-      <a href="#financovanie" class="hover:text-gray-400 transition font-[header-font] z-10 md:after:content-['•'] md:after:mx-2 md:after:text-gray-400">Financovanie</a>
+      <a href="{{ url('/') }}#benefity" class="hover:text-gray-400 transition font-[header-font] z-10 md:after:content-['•'] md:after:mx-2 md:after:text-gray-400">Benefity</a>
+      <a href="{{ url('/') }}#financovanie" class="hover:text-gray-400 transition font-[header-font] z-10 md:after:content-['•'] md:after:mx-2 md:after:text-gray-400">Financovanie</a>
       <a href="{{route('gallery')}}" class="hover:text-gray-400 transition font-[header-font] z-10 md:after:content-['•'] md:after:mx-2 md:after:text-gray-400">Galéria</a>
       <a href="#kontakt" class="hover:text-gray-400 transition font-[header-font] z-10">Kontakt</a>
     </nav>

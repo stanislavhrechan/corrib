@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="p-8 ">
-
-    <div class="flex items-center justify-between mb-8">
+<div class="p-4 md:p-8">
+    <div class="flex md:flex-row flex-col gap-3 md:gap-0 md:items-center justify-between mb-8">
         <div>
             <h1 class="text-white text-2xl font-semibold">Poschodia</h1>
             <p class="text-white/40 text-sm">
@@ -17,7 +16,7 @@
         </button>
     </div>
 
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
         @foreach($floors as $floor)
         <a href="{{ route('admin.floors.show', $floor->id) }}"
@@ -38,7 +37,7 @@
                     </h2>
 
                     <p class="text-white/40 text-sm mt-1">
-                        {{ $floor->apartments->count() }} rooms
+                        {{ $floor->apartments->count() }} apartmány
                     </p>
                 </div>
 
@@ -60,8 +59,8 @@
             </div>
 
             <div class="flex justify-between text-xs text-white/40 mt-2">
-                <span>{{ round($percent) }}% free</span>
-                <span>{{ 100 - round($percent) }}% occupied</span>
+                <span>{{ round($percent) }}% voľný</span>
+                <span>{{ 100 - round($percent) }}% predaný</span>
             </div>
 
         </a>

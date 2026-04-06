@@ -1,10 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="p-8">
+<div class="p-4 md:p-8">
 
-    <!-- HEADER -->
-    <div class="flex justify-between mb-8">
+    <div class="flex md:flex-row flex-col gap-5 md:gap-0 justify-between mb-8">
         <div>
             <h1 class="text-white text-2xl font-semibold">
                 {{ $building->name }}
@@ -21,7 +20,6 @@
         </button>
     </div>
 
-    <!-- GRID -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
 
         @foreach($building->parkings as $parking)
@@ -35,13 +33,17 @@
                 </span>
 
                 <span class="text-xs px-2 py-1 rounded
-                    @if($parking->status=='free') bg-green-500/20 text-green-300
-                    @elseif($parking->status=='occupied') bg-red-500/20 text-red-300
+                    @if($parking->status=='available') bg-green-500/20 text-green-300
+                    @elseif($parking->status=='sold') bg-red-500/20 text-red-300
                     @elseif($parking->status=='reserved') bg-yellow-500/20 text-yellow-300
                     @else bg-gray-500/20 text-gray-300
                     @endif">
 
-                    {{ $parking->status }}
+                    {{ 
+                        $parking->status == 'available' ? 'Voľné' :
+                        ($parking->status == 'sold' ? 'Predané' :
+                        ($parking->status == 'reserved' ? 'Rezervované' : 'Neznáme'))
+                    }}
                 </span>
             </div>
 
@@ -60,7 +62,7 @@
 </div>
 <div id="parkingModal" class="fixed inset-0 bg-black/60 flex items-center justify-center opacity-0 pointer-events-none transition">
 
-    <div id="parkingModalBox" class="w-[400px] bg-[#111] p-6 scale-95 opacity-0 transition">
+    <div id="parkingModalBox" class="w-[400px] bg-[#111] p-6 scale-95 opacity-0 transition mx-5 md:mx-0">
 
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-white">New Parking</h2>
@@ -96,7 +98,7 @@
      class="fixed inset-0 bg-black/60 flex items-center justify-center opacity-0 pointer-events-none transition">
 
     <div id="editParkingModalBox"
-         class="w-[400px] bg-[#111] p-6 scale-95 opacity-0 transition">
+         class="w-[400px] bg-[#111] p-6 scale-95 opacity-0 transition mx-5 md:mx-0">
 
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-white mb-4">Edit Parking</h2>
