@@ -12,7 +12,7 @@
         </div>
     @else
         <div class="gallery-item opacity-0 translate-y-5 transition duration-500">
-            <img src="{{ asset('gallery/' . $file) }}" class="w-full h-auto">
+            <img src="{{ asset('gallery/' . $file) }}" class="w-full h-auto lazy">
         </div>
     @endif
 @endforeach
