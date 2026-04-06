@@ -60,9 +60,9 @@
                             </span>
                         </td>
 
-                        <td class="px-4 py-3">{{ $apt->name }}</td>
+                        <td class="px-4 py-3">{{ $rooms->count() }}</td>
 
-                        <td class="px-4 py-3">{{ $apt->floor_id }}</td>
+                        <td class="px-4 py-3 font-bold">{{ $apt->floor_id }}</td>
 
                         <td class="px-4 py-3">
                             {{ $livingArea }} m²
