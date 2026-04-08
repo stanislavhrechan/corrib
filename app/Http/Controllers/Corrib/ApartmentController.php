@@ -9,12 +9,30 @@ use App\Models\Building;
 
 class ApartmentController extends Controller
 {
-    public function show($slug)
+   public function show($slug)
     {
         $apartment = Apartment::with('rooms')
             ->where('slug', $slug)
             ->firstOrFail();
-         $buildings = Building::with('parkings')->get();
-        return view('apartament', compact('apartment', 'buildings'));
+
+        $apartments = Apartment::where('floor_id', $apartment->floor_id)
+            ->orderBy('id')
+            ->get();
+
+        $currentIndex = $apartments->search(function ($item) use ($apartment) {
+            return $item->id === $apartment->id;
+        });
+
+        $prevApartment = $apartments[$currentIndex - 1] ?? null;
+        $nextApartment = $apartments[$currentIndex + 1] ?? null;
+
+        $buildings = Building::with('parkings')->get();
+
+        return view('apartament', compact(
+            'apartment',
+            'buildings',
+            'prevApartment',
+            'nextApartment'
+        ));
     }
 }

@@ -2,10 +2,33 @@
 @section('content')
 <section class="relative w-full pt-34 pb-12 bg-gray-50">
     <div class="relative max-w-6xl mx-auto px-6">
-        <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
-            Vyberte si priestor pre vašu ambulanciu
-        </h2>
-          <p class="text-black text-center md:text-md mb-10"><a href="{{route('corrib.bild')}}">Corrib Tower</a> - <a href="{{route('floor.show', $apartment['floor_id'])}}">{{$apartment['floor_id']}}NP</a> - <span class=" font-semibold">{{$apartment['name']}}</span></p>
+         @if($apartment->floor_id === 1)
+          <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
+              Vyberte si priestor pre vašu ambulanciu
+          </h2>
+        @else 
+         <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
+              Vyberte si váš nový domov
+          </h2>
+        @endif
+         <div class="flex items-center justify-center gap-5 my-5">
+            @if($prevApartment)
+            <a class="" href="{{ route('apartment.show', $prevApartment->slug) }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                </svg>
+
+            </a>
+            @endif
+            <p class="text-black text-center md:text-md"><a href="{{route('corrib.bild')}}">Corrib Tower</a> - <a href="{{route('floor.show', $apartment['floor_id'])}}">{{$apartment['floor_id']}}NP</a> - <span class=" font-semibold">{{$apartment['name']}}</span></p>
+            @if($nextApartment)
+            <a class="" href="{{ route('apartment.show', $nextApartment->slug) }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+            </a>
+            @endif
+        </div>
 
         <div class="grid md:grid-cols-[1fr_1fr] gap-10">
             <div class="flex flex-col gap-5">

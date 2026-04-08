@@ -39,18 +39,18 @@
     </form>
     <div class="space-y-3">
       <div class="bg-white relative p-5 shadow-lg">
-            <div class="absolute top-5 right-5"><img src="../images/benardlogo 4.svg" class="w-25 md:w-45 h-full object-cover" alt=""></div>
+            <div class="absolute top-5 right-5"><img src="../images/benardlogo 4.svg" class="w-25 md:w-55 h-full object-cover" alt=""></div>
             <p class="text-gray-600 text-sm">Exkluzívny Predajca</p>
             <h3 class="text-2xl font-bold mt-2">BENARD GROUP s.r.o.</h3>
             <div class="mt-6 space-y-1 text-sm">
-              <p><span class="font-semibold mr-2">M:</span>+421 907 211 103</p>
+              <p><span class="font-semibold mr-2">M:</span>+421 905 337 557</p>
               <p><span class="font-semibold mr-2">E:</span>info@benard.sk</p>
               <p><span class="font-semibold mr-2">A:</span>Karpatská 5995/50, 058 01 Poprad</p>
             </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-         <div class="bg-[#111111] p-4 text-[#F7F7F7F7] shadow-md hover:shadow-xl transition duration-300  cursor-pointer md:col-span-2">
-            <p class="text-sm text-gray-200">Hypotekárny špecialista:</p>
+         <div class="bg-white p-4  shadow-md hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer md:col-span-2">
+            <p class="text-sm text-gray-400">Hypotekárny špecialista:</p>
             <h3 class="font-bold text-lg">Ing. Zuzana Troščáková</h3>
             <div class="mt-4 text-sm">
               <p><span class="font-semibold mr-2">M:</span>+421 907 211 103</p>

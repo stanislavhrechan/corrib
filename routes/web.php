@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 Route::get('/corrib', [BuildController::class, 'index'])->name('corrib.bild');
 Route::get('/floor/{floor}', [FloorController::class, 'show'])->name('floor.show');
-Route::get('/apartment/{slug}', [ApartmentController::class, 'show']);
+Route::get('/apartment/{slug}', [ApartmentController::class, 'show'])->name('apartment.show');
 
 Route::get('/gallery_img', [Gallery::class, 'index'])->name('gallery');
 Route::get('/gallery_img/filter', [Gallery::class, 'filter'])->name('gallery.filter');

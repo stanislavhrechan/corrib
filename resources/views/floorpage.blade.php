@@ -2,10 +2,29 @@
 @section('content')
 <section class="relative w-full pb-12 mb-10">
     <div class="max-w-6xl mx-auto pt-30 px-3 mb-5 md:mb-10">
+        @if($floor->floor_number === 1)
           <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
               Vyberte si priestor pre vašu ambulanciu
           </h2>
+        @else 
+         <h2 class="font-[header-font] text-center text-3xl md:text-5xl">
+              Vyberte si váš nový domov
+          </h2>
+        @endif
+        <div class="flex items-center justify-center gap-5">
+          <a class="" href="{{ route('floor.show', $floor->floor_number - 1) }}">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+            </svg>
+
+          </a>
           <p class="text-black text-center md:text-md"><a href="{{route('corrib.bild')}}">Corrib Tower</a> - <span class="font-semibold ">{{$floor->name}}</span></p>
+           <a class="" href="{{ route('floor.show', $floor->floor_number + 1) }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+          </a>
+        </div>
     </div>
     <div class="building-wrapper w-full md:px-10 md:max-w-7xl mx-auto">
       @if($floor->floor_number >= 6 && $floor->floor_number <=9)

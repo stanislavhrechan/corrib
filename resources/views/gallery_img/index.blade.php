@@ -14,8 +14,8 @@
         </div>
     </div>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".filter-btn");
     const container = document.getElementById("gallery-container");
     const subcatContainer = document.getElementById("subcat-container");
@@ -28,7 +28,7 @@
         container.classList.add('opacity-50');
 
         let url = `/gallery_img/filter?category=${category}`;
-        if(subcategory) url += `&subcategory=${subcategory}`;
+        if (subcategory) url += `&subcategory=${subcategory}`;
 
         fetch(url)
             .then(res => res.text())
@@ -38,7 +38,8 @@
                 animateItems();
             });
 
-        renderSubcategories(category);
+        // 👉 передаём активную подкатегорию
+        renderSubcategories(category, subcategory);
     }
 
     function animateItems() {
@@ -50,27 +51,34 @@
         });
     }
 
-    function renderSubcategories(category) {
-        if(subcategories[category]){
+    function renderSubcategories(category, activeSub = null) {
+        if (subcategories[category]) {
             subcatContainer.innerHTML = '';
+
             subcategories[category].forEach(sub => {
                 const btn = document.createElement('button');
                 btn.textContent = sub;
                 btn.dataset.subcategory = sub;
+
                 btn.className = 'filter-sub-btn bg-gray-200 px-4 py-1 cursor-pointer';
+
+                if (sub === activeSub) {
+                    btn.classList.add('active');
+                }
+
                 btn.addEventListener('click', () => {
-                    subcatContainer.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+                    subcatContainer.querySelectorAll('button').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
                     loadGallery(category, sub);
                 });
+
                 subcatContainer.appendChild(btn);
             });
         } else {
             subcatContainer.innerHTML = '';
         }
     }
-
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
             buttons.forEach(b => b.classList.remove('active'));
@@ -80,41 +88,45 @@
 
             let defaultSub = null;
 
-            if(category === 'interier') {
+            if (category === 'interier') {
                 defaultSub = '4i';
             }
 
             history.pushState(null, '', `?category=${category}`);
             loadGallery(category, defaultSub);
-
-            setTimeout(() => {
-                if(defaultSub){
-                    const subBtn = document.querySelector(`[data-subcategory="${defaultSub}"]`);
-                    subBtn?.classList.add('active');
-                }
-            }, 100);
         });
     });
 
     const urlParams = new URLSearchParams(window.location.search);
     const startCategory = urlParams.get('category') || 'all';
+
     buttons.forEach(b => b.classList.remove('active'));
     document.querySelector(`[data-category="${startCategory}"]`)?.classList.add('active');
 
-    loadGallery(startCategory);
+    let startSub = null;
+    if (startCategory === 'interier') {
+        startSub = '4i';
+    }
+
+    loadGallery(startCategory, startSub);
 });
-    </script>
+</script>
 
-    <style>
-    .filter-btn {
-        padding: 8px 16px;
-        background: #eee;
-        transition: 0.3s;
-    }
+<style>
+.filter-btn {
+    padding: 8px 16px;
+    background: #eee;
+    transition: 0.3s;
+}
 
-    .filter-btn.active {
-        background: black;
-        color: white;
-    }
-    </style>
+.filter-btn.active {
+    background: black;
+    color: white;
+}
+
+.filter-sub-btn.active {
+    background: black;
+    color: white;
+}
+</style>
 @endsection
