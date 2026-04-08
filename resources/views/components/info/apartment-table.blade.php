@@ -9,7 +9,6 @@
                     <th class="px-4 py-3 text-white uppercase text-xs">Podlažie</th>
                     <th class="px-4 py-3 text-white uppercase text-xs">Interiér</th>
                     <th class="px-4 py-3 text-white uppercase text-xs">Balkón / Terasa</th>
-                    <th class="px-4 py-3 text-white uppercase text-xs">Pivnica</th>
                     <th class="px-4 py-3 text-white uppercase text-xs">Spolu</th>
                     <th class="px-4 py-3 text-white uppercase text-xs">Cena</th>
                     <th class="px-4 py-3 text-white uppercase text-xs">Stav</th>
@@ -62,7 +61,7 @@
 
                         <td class="px-4 py-3">{{ $rooms->count() }}</td>
 
-                        <td class="px-4 py-3 font-bold">{{ $apt->floor_id }}</td>
+                        <td class="px-4 py-3 font-bold">NP{{ $apt->floor_id }}</td>
 
                         <td class="px-4 py-3">
                             {{ $livingArea }} m²
@@ -72,9 +71,7 @@
                             {{ $balconyArea > 0 ? $balconyArea . ' m²' : 'Nepridaná' }}
                         </td>
 
-                        <td class="px-4 py-3">
-                            {{ ($pivnica && $pivnica->area > 0) ? $pivnica->area . ' m²' : 'Nepridaná' }}
-                        </td>
+                       
 
                         <td class="px-4 py-3">
                             {{ $totalArea }} m²
@@ -93,5 +90,6 @@
                 @endforeach
             </tbody>
         </table>
+        <p class="text-md text-gray-500 text-center py-6">Ku každému bytu prislúcha pivnica</p>
     </div>
 </div>

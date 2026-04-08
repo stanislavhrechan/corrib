@@ -7,15 +7,25 @@
         </h2>
           <p class="text-black text-center md:text-md mb-10"><a href="{{route('corrib.bild')}}">Corrib Tower</a> - <a href="{{route('floor.show', $apartment['floor_id'])}}">{{$apartment['floor_id']}}NP</a> - <span class=" font-semibold">{{$apartment['name']}}</span></p>
 
-        <div class="grid md:grid-cols-[1fr_1fr] gap-8">
-           
-            <div class="">
+        <div class="grid md:grid-cols-[1fr_1fr] gap-10">
+            <div class="flex flex-col gap-5">
                 @if($apartment->floor_id >= 6 && $apartment->floor_id <=9)
                <img src="{{ asset('images/apartaments/6_9/' . $apartment->name) }}.svg" alt="">
+               <div class="flex gap-5">
+                    <img src="{{ asset('images/apartaments/6_9/psh_' . $apartment->floor_id . '.svg') }}" alt="" class="w-1/3">
+                    <img src="{{ asset('images/apartaments/6_9/' . $apartment->name . '_info.svg') }}" alt="" class="w-2/3">
+                </div>
                 @else
                <img src="{{ asset('images/apartaments/' . $apartment->floor_id . '/' . $apartment->name) }}.svg" alt="">
+               <div class="flex gap-5">
+                    <img src="{{ asset('images/apartaments/' . $apartment->floor_id . '/psh_' . $apartment->floor_id . '.svg') }}" alt="" class="w-1/3">
+                    
+                    <img src="{{ asset('images/apartaments/' . $apartment->floor_id . '/' . $apartment->name . '_info.svg') }}" alt="" class="w-2/3">
+                </div>
+              
                @endif
             </div>
+
             <div class="space-y-6">
                 <div class="bg-white px-6">
                     <h3 class="text-xl font-semibold mb-4">Legenda miestností</h3>
