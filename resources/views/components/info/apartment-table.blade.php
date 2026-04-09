@@ -59,7 +59,7 @@
                             </span>
                         </td>
 
-                        <td class="px-4 py-3">{{ $rooms->count() }}</td>
+                        <td class="px-4 py-3">{{ $rooms->whereIn('name', ['Izba', 'Obývacia izba'])->count(); }}</td>
 
                         <td class="px-4 py-3 font-bold">NP{{ $apt->floor_id }}</td>
 
@@ -68,7 +68,7 @@
                         </td>
 
                         <td class="px-4 py-3">
-                            {{ $balconyArea > 0 ? $balconyArea . ' m²' : 'Nepridaná' }}
+                            {{ $balconyArea > 0 ? $balconyArea . ' m²' : '' }}
                         </td>
 
                        
