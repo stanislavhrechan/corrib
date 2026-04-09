@@ -90,6 +90,6 @@
                 @endforeach
             </tbody>
         </table>
-        <p class="text-md text-gray-500 text-center py-6">Ku každému bytu prislúcha pivnica</p>
+        <p class="text-md text-gray-900 text-center py-6">Ku každému bytu prislúcha pivnica</p>
     </div>
 </div>
