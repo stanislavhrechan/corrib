@@ -4,6 +4,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\Admin\{RoomController, FloorAdminController, ApartmentAdminController, ParkingAdminController};
 use App\Http\Controllers\Corrib\{BuildController, FloorController, ApartmentController, Gallery};
+
+Route::get('/password', function () {
+    return view('password');
+});
+
+Route::post('/password', function (Illuminate\Http\Request $request) {
+    if ($request->password === 'BenardJeSuper97') {
+        session(['access_granted' => true]);
+        return redirect('/');
+    }
+
+    return back()->with('error', 'Wrong password');
+});
+
+Route::middleware('password.protect')->group(function () {
+
 Route::get('/', function () {
     return view('index');
 });
@@ -56,4 +72,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/floor/apartment/room/store', [RoomController::class, 'store'])->name('admin.floors.apartment.room.store');
     Route::put('/admin/floor/apartment/room/{room}/update', [RoomController::class, 'update'])->name('admin.floors.apartment.room.update');
     Route::delete('/admin/floor/apartment/room/{room}/destroy', [RoomController::class, 'destroy'])->name('admin.floors.apartment.room.destroy');
+});
+
 });
