@@ -1,8 +1,8 @@
 @php
 $images = [
-    ['src' => '/images/for_why/why_1.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Exteriérové rolety/žalúzie', 'text' => '10Np+ 11Np/ostatné podlažia doladíme'],
+    ['src' => '/images/for_why/why_1.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Exteriérové rolety/žalúzie', 'text' => 'Príprava na všetky byty'],
     ['src' => '/images/for_why/why_2.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Video vrátnik a Kamerový systém ', 'text' => 'Špičkové technológie, ktoré strážia váš domov, kým vy si nerušene užívate jeho pohodlie.'],
-    ['src' => '/images/for_why/why_3.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Príprava na klimatizáciu', 'text' => 'V projekte je zabezpečená kompletná príprava na inštaláciu klimatizácie. Toto riešenie umožňuje dodatočnú montáž jednotiek bez potreby búrania. Získate tak jednoduchú cestu k maximálnemu tepelnému komfortu počas horúcich dní.'],
+    ['src' => '/images/for_why/why_3.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Príprava na klimatizáciu', 'text' => 'V projekte je zabezpečená kompletná príprava na inštaláciu klimatizácie. Získate tak jednoduchú cestu k maximálnemu tepelnému komfortu počas horúcich dní.'],
     ['src' => '/images/for_why/why_4.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Fotovoltická elektráreň a tepelné čerpadlo', 'text' => 'Váš komfort zabezpečuje kombinácia fotovoltiky a výkonného tepelného čerpadla vzduch/voda. Ekologická energia zo slnka napája kúrenie, osvetlenie aj ohrev vody. Tento systém výrazne znižuje vaše mesačné prevádzkové náklady. Tepelné čerpadlo sa postará o úsporný ohrev teplej vody a stabilné teplo v celom priestore. Využívanie obnoviteľných zdrojov chráni životné prostredie aj vašu peňaženku.'],
     ['src' => '/images/for_why/why_5.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Inteligentný manažment tepla', 'text' => 'Centrálna plynová kotolňa v spojení s bytovými stanicami Danfoss vám umožní nastaviť si ideálne teplo v každej miestnosti jednoducho cez mobilnú aplikáciu.'],
 ];
@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const overlay = item.querySelector('.overlay');
             const text = item.querySelector('.card-text');
 
-            // 📱 MOBILE
             if (isMobile) {
                 item.style.flex = 'unset';
                 item.style.height = '250px';
@@ -73,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 text.style.opacity = '1';
                 text.style.transform = 'translateY(0)';
             } 
-            // 💻 DESKTOP
             else {
                 item.style.flex = (i === index) ? '11' : '1';
 
@@ -84,10 +82,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🔹 initial state
     setActive(0);
 
-    // 🔹 MOBILE → click to switch
     if (isMobile) {
         items.forEach((item, i) => {
             item.addEventListener('click', () => {
@@ -96,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🔹 DESKTOP → hover
     if (!isMobile) {
         items.forEach((item, i) => {
             item.addEventListener('mouseenter', () => {
@@ -110,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🔹 autoplay только на desktop
     if (!isMobile) {
         setInterval(() => {
             if (!isHovered) {
