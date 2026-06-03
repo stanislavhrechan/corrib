@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\Admin\{RoomController, FloorAdminController, ApartmentAdminController, ParkingAdminController};
-use App\Http\Controllers\Corrib\{BuildController, FloorController, ApartmentController, Gallery};
+use App\Http\Controllers\Corrib\{BuildController, FloorController, ApartmentController, Gallery, ContactForm};
 
 Route::get('/password', function () {
     return view('password');
@@ -25,6 +25,10 @@ Route::get('/', function () {
 });
 
 Route::get('/corrib', [BuildController::class, 'index'])->name('corrib.bild');
+
+//Contact form
+Route::post('/coorib/kontakt', [ContactForm::class, 'contact_send'])->name('corrib.contact');
+
 Route::get('/floor/{floor}', [FloorController::class, 'show'])->name('floor.show');
 Route::get('/apartment/{slug}', [ApartmentController::class, 'show'])->name('apartment.show');
 

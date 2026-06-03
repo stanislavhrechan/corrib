@@ -7,20 +7,21 @@
     </p>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 mt-10 mx-5 md:mx-10 gap-5 ">
-    <form action="" class="bg-white p-5 md:p-10  shadow-lg space-y-6 border border-gray-100">
+    <form action="{{route('corrib.contact')}}" method="POST" class="bg-white p-5 md:p-10  shadow-lg space-y-6 border border-gray-100">
+      @csrf
       <h2 class="font-[header-font] text-center text-2xl md:text-3xl">Chcete si dohodnúť obhliadku?</h2>
      
       <div class="space-y-4">
-          <input name="name" type="text" placeholder="Meno a priezvisko*"
+          <input name="name" type="text" required placeholder="Meno a priezvisko*"
             class="w-full bg-white border border-gray-200 px-5 py-4 focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition">
 
-          <input name="email" type="email" placeholder="Email*"
+          <input name="email" type="email" required placeholder="Email*"
             class="w-full bg-white border border-gray-200 px-5 py-4 focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition">
 
           <input name="phone" type="tel" placeholder="Tel. číslo*"
             class="w-full bg-white border border-gray-200 px-5 py-4 focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition">
 
-          <textarea name="message" placeholder="Vaša správa*"
+          <textarea name="message" required placeholder="Vaša správa*"
             class="w-full bg-white border border-gray-200 px-5 py-4 h-36 resize-none focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition"></textarea>
         </div>
 

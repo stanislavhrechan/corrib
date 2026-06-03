@@ -20,7 +20,7 @@
         <div class="absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-black rounded-full z-10 transition hover:scale-125"></div>
         <div class="mt-24 text-center">
           <h4 class="uppercase">Výstavba</h4>
-          <span class="text-gray-600 font-[header-font] text-xl">Q1 2026</span>
+          <span class="text-gray-600 font-[header-font] text-xl">Q2 2026</span>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
         <div class="absolute top-1/2 -translate-y-1/2 w-6 h-6 border-2 border-black bg-white rounded-full z-10 transition hover:scale-125"></div>
         <div class="mt-24 text-center">
           <h4 class="uppercase">Ukončenie Výstavby</h4>
-          <span class="text-gray-600 font-[header-font] text-xl">Q2 2026</span>
+          <span class="text-gray-600 font-[header-font] text-xl">Q2 2028</span>
         </div>
       </div>
 
@@ -36,7 +36,7 @@
         <div class="absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-black rounded-full z-10 transition hover:scale-125"></div>
         <div class="mt-24 text-center">
           <h4 class="uppercase">Kolaudácia</h4>
-          <span class="text-gray-600 font-[header-font] text-xl">Q3 2026</span>
+          <span class="text-gray-600 font-[header-font] text-xl"></span>
         </div>
       </div>
 
@@ -44,7 +44,7 @@
         <div class="absolute top-1/2 -translate-y-1/2 w-6 h-6 border-2 border-black bg-white rounded-full z-10 transition hover:scale-125"></div>
         <div class="mt-24 text-center">
           <h4 class="uppercase">Odovzdávanie bytov</h4>
-          <span class="text-gray-600 font-[header-font] text-xl">Q4 2026</span>
+          <span class="text-gray-600 font-[header-font] text-xl"></span>
         </div>
       </div>
 
