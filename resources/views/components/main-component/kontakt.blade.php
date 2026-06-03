@@ -25,10 +25,17 @@
         </div>
 
         <label class="flex items-start gap-3 text-sm text-gray-500">
-          <input required type="checkbox" class="mt-1">
+          <input required type="checkbox" class="mt-1 accent-black">
+          
           <span>
-            Súhlasím so spracovaním
-            <a href="#" class="underline text-black">osobných údajov</a>
+            Oboznámil som sa so
+            <a 
+              href="https://www.appgdpr.sk/doc/01HMD-Y34JP-8GF4-VVNF-CJ75-11F1/DIP Zásady ochrany OU.html" 
+              target="_blank"
+              class="underline text-black hover:text-black/70 transition"
+            >
+              Zásadami ochrany OÚ
+            </a>.
           </span>
         </label>
 

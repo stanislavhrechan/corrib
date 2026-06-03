@@ -11,7 +11,7 @@ class BuildController extends Controller
     public function index()
     {
         $buildings = Building::with('parkings')->get();
-         $apartments = Apartment::orderBy('floor_id', 'asc')->get();
+        $apartments = Apartment::with('rooms')->orderBy('floor_id', 'asc')->orderBy('name', 'asc')->get();
         return view('housepage', compact('buildings', 'apartments'));
     }
 }

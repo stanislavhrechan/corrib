@@ -56,7 +56,7 @@
   <iframe id="kuulaFrame"
     class="w-full h-full"
     frameborder="0"
-    allow="xr-spatial-tracking; gyroscope; accelerometer"
+    allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen; vr"
     allowfullscreen
     scrolling="no">
   </iframe>

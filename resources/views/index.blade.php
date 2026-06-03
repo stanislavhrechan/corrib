@@ -5,7 +5,7 @@
     <x-home-page.hose></x-home-page.hose>
     <x-home-page.benefits></x-home-page.benefits>
     <x-home-page.harmonogram></x-home-page.harmonogram>
-    <x-home-page.why></x-home-page.why>
+    <x-home-page.why/> 
     <x-home-page.map></x-home-page.map>
     <x-home-page.financovanie></x-home-page.financovanie>
     <x-home-page.galeria></x-home-page.galeria>

@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-60">
     <div class="block md:hidden relative z-60">
         <button class="px-4 py-2 text-xs rounded-md 
-            bg-[#947D6D]/25 backdrop-blur-md text-white flex items-center
+            bg-[#947D6D]/25 backdrop-blur-md text-black flex items-center
             cursor-pointer           
             hover:bg-[#947D6D]/80 transition uppercase">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -24,14 +24,14 @@
     <nav class="hidden md:flex gap-8 text-md absolute right-60 top-1/2 -translate-y-1/2 z-60">
         <a href="{{ url('/') }}#financovanie" class="nav-link link-center-line-black" data-scroll="#financovanie">Financovanie</a>
         <a href="{{route('gallery')}}" class="nav-link link-center-line-black">Galéria</a>
-        <a href="#kontakt" class="nav-link link-center-line-black" data-scroll="#kontakt">Kontakt</a>
+        <a href="{{ url('/') }}#kontakt" class="nav-link link-center-line-black" data-scroll="#kontakt">Kontakt</a>
     </nav>
 
     <div class="block md:hidden relative z-60">
         <button id="menu-btn" class="px-2 py-2 text-xs rounded-md 
-            bg-[#947D6D]/25 backdrop-blur-md text-white flex items-center
-            cursor-pointer hover:bg-[#947D6D]/80 transition uppercase">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+            bg-[#947D6D]/25 backdrop-blur-md  flex items-center
+            cursor-pointer text-black  hover:bg-[#947D6D]/80 transition uppercase">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
         </button>
@@ -50,7 +50,7 @@
         <a href="{{ url('/') }}#benefity" class="mobile-link  font-[header-font]">Benefity</a>
         <a href="{{ url('/') }}#financovanie" class="mobile-link  font-[header-font]">Financovanie</a>
         <a href="{{ route('gallery') }}" class="mobile-link  font-[header-font]">Galéria</a>
-        <a href="#kontakt" class="mobile-link  font-[header-font]">Kontakt</a>
+        <a href="{{ url('/') }}#kontakt" class="mobile-link  font-[header-font]">Kontakt</a>
 
     </div>
 </div>

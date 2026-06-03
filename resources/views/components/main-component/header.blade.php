@@ -27,7 +27,7 @@
         <a href="#kontakt" class="nav-link link-center-line" data-scroll="#kontakt">Kontakt</a>
     </nav>
 
-    <div class="block md:hidden relative z-50">
+    <div class="block md:hidden relative z-60">
         <button id="menu-btn" class="px-2 py-2 text-xs rounded-md 
             bg-[#947D6D]/25 backdrop-blur-md text-white flex items-center
             cursor-pointer hover:bg-[#947D6D]/80 transition uppercase">

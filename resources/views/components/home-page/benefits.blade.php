@@ -4,7 +4,7 @@ $images = [
     ['src' => '/images/for_why/why_2.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Video vrátnik a Kamerový systém ', 'text' => 'Špičkové technológie, ktoré strážia váš domov, kým vy si nerušene užívate jeho pohodlie.'],
     ['src' => '/images/for_why/why_3.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Príprava na klimatizáciu', 'text' => 'V projekte je zabezpečená kompletná príprava na inštaláciu klimatizácie. Získate tak jednoduchú cestu k maximálnemu tepelnému komfortu počas horúcich dní.'],
     ['src' => '/images/for_why/why_4.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Fotovoltická elektráreň a tepelné čerpadlo', 'text' => 'Váš komfort zabezpečuje kombinácia fotovoltiky a výkonného tepelného čerpadla vzduch/voda. Ekologická energia zo slnka napája kúrenie, osvetlenie aj ohrev vody. Tento systém výrazne znižuje vaše mesačné prevádzkové náklady. Tepelné čerpadlo sa postará o úsporný ohrev teplej vody a stabilné teplo v celom priestore. Využívanie obnoviteľných zdrojov chráni životné prostredie aj vašu peňaženku.'],
-    ['src' => '/images/for_why/why_5.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Inteligentný manažment tepla', 'text' => 'Centrálna plynová kotolňa v spojení s bytovými stanicami Danfoss vám umožní nastaviť si ideálne teplo v každej miestnosti jednoducho cez mobilnú aplikáciu.'],
+    ['src' => '/images/for_why/why_5.png', 'alt' => 'Illustrations by my fav AarzooAly', 'header' => 'Inteligentný manažment tepla', 'text' => 'Inteligentný manažment tepla Vlastná plynová kotolňa v bytovom dome v kombinácii s modernými bytovými stanicami vám umožňuje nastaviť si ideálne teplo v každej miestnosti.'],
 ];
 @endphp
 

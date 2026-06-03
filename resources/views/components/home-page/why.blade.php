@@ -4,7 +4,7 @@
     </h2>
 </div>
 
-<section class="relative w-full mt-30" id="sticky-cards-container">
+<section class="relative w-full mt-30" id="sticky-cards-container"  style="visibility:hidden">
 
 @php
 $cards = [
@@ -61,11 +61,11 @@ $cards = [
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
             </svg>
             HTML,
-        'text' => 'Veríme, že skutočný komfort bývania sa meria aj tým, ako rýchlo a pohodine vybavite
-        dôležité záležitosti spojené so zdravím.
-        Zabudnite na štartovanie auta či hladanie
-        parkoviska - poliklinika s lekárňou priamo v areáli vám ušetrí čas aj energiu. Všetko
-        potrebné máte na dosah, pohodine a bez zbytočných starostí.'
+        'text' => 'Veríme, že skutočný komfort bývania sa meria aj tým, ako rýchlo a pohodlne vybavíte
+dôležité záležitosti spojené so zdravím.
+Zabudnite na štartovanie auta či hľadanie
+parkoviska - poliklinika s lekárňou priamo v areáli vám ušetrí čas aj energiu. Všetko
+potrebné máte na dosah, pohodlne a bez zbytočných starostí.'
     ],
     [
         'id' => 5,
@@ -112,7 +112,7 @@ $cards = [
 ];
 @endphp
 
-<div class="sticky-wrapper relative w-full h-[100dvh] overflow-hidden">
+<div class="sticky-wrapper relative w-full min-h-screen overflow-hidden">
 
     @foreach($cards as $index => $card)
         <div class="card absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center overflow-hidden">
@@ -160,76 +160,108 @@ $cards = [
 
 </div>
 </section>
+
+
 <style>
+#sticky-cards-container {
+    position: relative;
+}
+
+
+.sticky-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .card {
-will-change: transform;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+.card {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.card-video,
+.card div.bg-cover {
+    will-change: transform;
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const container = document.getElementById("sticky-cards-container");
     const cards = gsap.utils.toArray(".card");
-    const videos = document.querySelectorAll(".card-video");
-    const total = cards.length;
 
-    gsap.set(cards, {
-        xPercent: (i) => i === 0 ? 0 : 100
+    const firstCard = cards[0];
+    const animatedCards = cards.slice(1);
+
+    const total = animatedCards.length;
+
+    gsap.set(firstCard, {
+        xPercent: 0,
+        zIndex: 1,
+        force3D: true
     });
 
-    const tl = gsap.timeline({
-        defaults: { ease: "none" },
-        scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: () => "+=" + (window.innerHeight * total),
-            pin: true,
-            scrub: 1,
-            anticipatePin: 0.5,
-            invalidateOnRefresh: true,
+    animatedCards.forEach((card, i) => {
+        gsap.set(card, {
+            xPercent: 100,
+            zIndex: i + 2,
+            force3D: true
+        });
+    });
+
+    gsap.set("#sticky-cards-container", {
+        visibility: "visible",
+        opacity: 1
+    });
+
+    ScrollTrigger.create({
+        trigger: "#sticky-cards-container",
+        start: "top top",
+
+        end: () => "+=" + window.innerHeight * (total * 1.5 + 1),
+
+        pin: true,
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+
+
+        onUpdate: (self) => {
+
+            const p = self.progress;
+            const step = 1 / total;
+
+            animatedCards.forEach((card, i) => {
+
+                const start = step * i;
+                const end = step * (i + 1);
+
+                let x = 100;
+
+                if (p >= start && p <= end) {
+                    const local = (p - start) / step;
+                    x = 100 - (local * 100);
+                } else if (p > end) {
+                    x = 0;
+                }
+
+                gsap.set(card, {
+                    xPercent: x,
+                    force3D: true
+                });
+            });
         }
     });
 
-    cards.forEach((card, i) => {
-        if (i === total - 1) return;
-
-        tl.to(cards[i + 1], {
-            xPercent: 0
-        });
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const video = entry.target;
-
-            if (!video) return;
-
-            if (entry.isIntersecting) {
-                video.muted = true;
-                video.playsInline = true;
-
-                video.play().catch(() => {});
-            } else {
-                video.pause();
-            }
-        });
-    }, {
-        threshold: 0.6 
-    });
-
-    videos.forEach(video => {
-        observer.observe(video);
-    });
-
-    let resizeTimeout;
-    window.addEventListener("resize", () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            ScrollTrigger.refresh();
-        }, 200);
-    });
-
+    ScrollTrigger.refresh();
 });
 </script>
