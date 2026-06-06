@@ -15,7 +15,7 @@ class ContactForm extends Controller
             'phone' => 'nullable|string|max:30',
             'message' => 'required|string',
         ]);
-        Mail::to('network.stanislav@gmail.com')->send(new ContactMail($data));
+        Mail::to('stanislavq008@gmail.com')->send(new ContactMail($data));
         return back()->with('success', 'Správa bola odoslaná');
     }
 }

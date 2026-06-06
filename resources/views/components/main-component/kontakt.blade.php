@@ -18,7 +18,7 @@
           <input name="email" type="email" required placeholder="Email*"
             class="w-full bg-white border border-gray-200 px-5 py-4 focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition">
 
-          <input name="phone" type="tel" placeholder="Tel. číslo*"
+          <input name="phone" type="tel" required placeholder="Tel. číslo*"
             class="w-full bg-white border border-gray-200 px-5 py-4 focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition">
 
           <textarea name="message" required placeholder="Vaša správa*"

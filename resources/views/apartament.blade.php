@@ -81,7 +81,7 @@
                     <h3 class="text-2xl font-semibold mb-4">Detail ponuky</h3>
                     <p class="mb-2"><span class="font-medium">Názov:</span> {{ $apartment['name'] }}</p>
                     <p class="mb-2"><span class="font-medium">Výmera:</span> {{ $apartment->rooms->sum('area')}} m²</p>
-                    <p class="mb-2"><span class="font-medium">Počet miestností:</span> {{ $apartment->rooms->count()}}</p>
+                    <p class="mb-2"><span class="font-medium">Počet miestností:</span> {{ $apartment->rooms->whereIn('name', ['Izba', 'Obývacia izba'])->count(); }} izbový</p>
                     <p class="mb-2"><span class="font-medium">Poschodie:</span> {{ $apartment->floor_id }}</p>
                     <p class="mb-4">
                         <span class="font-medium">Stav:</span>
