@@ -29,7 +29,7 @@
       <h3 class="text-3xl font-[header-font]">Všetko dôležité pre vaše zdravie.</h3>
       <p class="text-md">Veríme, že skutočný komfort bývania sa meria aj tým, ako rýchlo a pohodlne vybavíte
       dôležité záležitosti spojené so zdravím.<br>Zabudnite na štartovanie auta či hľadanie parkoviska pred poliklinikou, keďže tá sa nachádza priamo v areáli, ušetríte čas dochádzaním. Neďaleká
-      Lekáreň Corrib je vám tiež k dispozícii.</p>
+      Lekáreň je vám tiež k dispozícii.</p>
        <img src="./images/for_map/2.webp" alt=""  class="w-full">
        <div class="h-[1px] w-full bg-black/80"></div>
     </div>
