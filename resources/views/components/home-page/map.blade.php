@@ -8,7 +8,7 @@
       </div>
 
       <div class="map-zoom-1">
-        <img src="./images/for_map/Group 613.jpg">
+        <img src="./images/for_map/Group 614.jpg">
       </div>
 
     </div>
