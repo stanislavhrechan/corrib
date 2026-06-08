@@ -33,46 +33,46 @@
             @include('svg.dom-prizemie', ['building' => $podzemne])
         </div>
         <div class="svg-item" id="svg-outside" style="display:none;">
-
-            <div class="space-y-3 mt-5">
+            @include('svg.ostatne-parkovisko', ['building' => $von_statia])
+            <div class=" mt-5 grid grid-cols-2 gap-2">
 
                 @foreach($von_statia->parkings as $place)
 
-                    <div class="flex items-center justify-between  border border-neutral-200 bg-white px-5 py-4 ">
+                        <div class="flex items-center justify-between  border border-neutral-200 bg-white px-5 py-2 ">
 
-                        <div class="flex flex-col">
-                            <span class="text-sm uppercase tracking-[0.15em] text-neutral-400">
-                                Parkovacie miesto
-                            </span>
+                            <div class="flex flex-col">
+                                <span class="text-sm uppercase tracking-[0.15em] text-neutral-400">
+                                    Parkovacie miesto
+                                </span>
 
-                            <span class=" font-semibold text-neutral-900">
-                                {{ $place->parking_number }}
-                            </span>
+                                <span class=" font-semibold text-neutral-900">
+                                    {{ $place->parking_number }}
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+
+                                <span class="
+                                    h-2.5 w-2.5 rounded-full
+                                    @if($place->status === 'available') bg-emerald-500
+                                    @elseif($place->status === 'reserved') bg-amber-400
+                                    @else bg-red-500
+                                    @endif
+                                "></span>
+
+                                <span class="text-sm font-medium text-neutral-600">
+                                    @if($place->status === 'available')
+                                        Voľné
+                                    @elseif($place->status === 'reserved')
+                                        Rezervované
+                                    @else
+                                        Predané
+                                    @endif
+                                </span>
+
+                            </div>
+
                         </div>
-
-                        <div class="flex items-center gap-2">
-
-                            <span class="
-                                h-2.5 w-2.5 rounded-full
-                                @if($place->status === 'available') bg-emerald-500
-                                @elseif($place->status === 'reserved') bg-amber-400
-                                @else bg-red-500
-                                @endif
-                            "></span>
-
-                            <span class="text-sm font-medium text-neutral-600">
-                                @if($place->status === 'available')
-                                    Voľné
-                                @elseif($place->status === 'reserved')
-                                    Rezervované
-                                @else
-                                    Predané
-                                @endif
-                            </span>
-
-                        </div>
-
-                    </div>
 
                 @endforeach
 
