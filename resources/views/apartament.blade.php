@@ -83,16 +83,23 @@
                     <p class="mb-2"><span class="font-medium">Výmera:</span> {{ $apartment->rooms->sum('area')}} m²</p>
                     <p class="mb-2"><span class="font-medium">Počet miestností:</span> {{ $apartment->rooms->whereIn('name', ['Izba', 'Obývacia izba'])->count(); }} izbový</p>
                     <p class="mb-2"><span class="font-medium">Poschodie:</span> {{ $apartment->floor_id }}</p>
-                    <p class="mb-4">
-                        <span class="font-medium">Stav:</span>
-                        <span class="bg-green-200 px-3 py-1 ml-2 font-semibold">{{ $apartment->status == 'free' ? 'Voľný' : 'Predaný'  }}</span>
-                    </p>
+                   <p class="mb-4">
+    <span class="font-medium">Stav:</span>
+    <span class="
+        px-3 py-1 ml-2 font-semibold
+        {{ $apartment->status == 'free' ? 'bg-green-200' : ($apartment->status == 'reserved' ? 'bg-yellow-200' : 'bg-red-200') }}
+    ">
+        {{ $apartment->status == 'free' ? 'Voľný' : ($apartment->status == 'reserved' ? 'Rezervovaný' : 'Predaný') }}
+    </span>
+</p>
+                   @if($apartment->status == 'free')
                    <button
                         class="text-gray-800 px-6 py-2 cursor-pointer transition"
                         id="scroll-button"
                     >
                         Mám záujem
                     </button>
+                   @endif
                 </div>
             </div>
         </div>

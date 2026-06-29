@@ -3,26 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\Admin\{RoomController, FloorAdminController, ApartmentAdminController, ParkingAdminController};
-use App\Http\Controllers\Corrib\{BuildController, FloorController, ApartmentController, Gallery, ContactForm};
+use App\Http\Controllers\Corrib\{HomeController, BuildController, FloorController, ApartmentController, Gallery, ContactForm};
 
-Route::get('/password', function () {
-    return view('password');
-});
 
-Route::post('/password', function (Illuminate\Http\Request $request) {
-    if ($request->password === 'BenardJeSuper97') {
-        session(['access_granted' => true]);
-        return redirect('/');
-    }
 
-    return back()->with('error', 'Wrong password');
-});
-
-Route::middleware('password.protect')->group(function () {
-
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/corrib', [BuildController::class, 'index'])->name('corrib.bild');
 
@@ -78,4 +63,3 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/floor/apartment/room/{room}/destroy', [RoomController::class, 'destroy'])->name('admin.floors.apartment.room.destroy');
 });
 
-});

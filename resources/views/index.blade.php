@@ -2,7 +2,7 @@
 @section('content')
     <x-home-page.hero></x-home-page.hero>
     <x-home-page.about></x-home-page.about>
-    <x-home-page.hose></x-home-page.hose>
+    <x-home-page.hose :floorStatuses="$floorStatuses" :floorData="$floorData"></x-home-page.hose>
     <x-home-page.benefits></x-home-page.benefits>
     <x-home-page.harmonogram></x-home-page.harmonogram>
     <x-home-page.why/> 

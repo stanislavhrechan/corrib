@@ -1,3 +1,4 @@
+@props(['floorData'=>[],'floorStatuses'=>[]])
 <section class="relative w-full pt-34  pb-12">
     <div class="px-6 text-center mb-10">
       <h2 class="font-[header-font] text-center text-4xl md:text-5xl">Vyberte si váš nový domov</h2>

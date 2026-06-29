@@ -37,6 +37,11 @@
                                 {{ $data['email'] }}
                             </p>
 
+			   <p style="margin: 0 0 15px;""
+			     <strong>Telefone cislo:</strong><br>
+                             {{$data['phone']}}
+		          </p>
+
                             <hr style="border:none; border-top:1px solid #eee; margin:20px 0;">
 
                             <p style="margin:0;">

@@ -62,7 +62,7 @@
       <div class="timeline-item relative flex justify-start">
         <div class="w-1/2 pr-8 text-right">
           <h4 class="uppercase">Výstavba</h4>
-          <span class="text-gray-600 font-[header-font] text-lg">Q1 2026</span>
+          <span class="text-gray-600 font-[header-font] text-lg">Q2 2026</span>
         </div>
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
                     w-6 h-6 bg-black rounded-full z-10 transition hover:scale-125"></div>
@@ -71,7 +71,7 @@
       <div class="timeline-item relative flex justify-end">
         <div class="w-1/2 pl-8 text-left">
           <h4 class="uppercase">Ukončenie Výstavby</h4>
-          <span class="text-gray-600 font-[header-font] text-lg">Q2 2026</span>
+          <span class="text-gray-600 font-[header-font] text-lg">Q2 2028</span>
         </div>
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
                     w-6 h-6 border-1 border-black bg-white rounded-full z-10 transition hover:scale-125"></div>
@@ -80,7 +80,7 @@
       <div class="timeline-item relative flex justify-start">
         <div class="w-1/2 pr-8 text-right">
           <h4 class="uppercase">Kolaudácia</h4>
-          <span class="text-gray-600 font-[header-font] text-lg">Q3 2026</span>
+          <span class="text-gray-600 font-[header-font] text-lg"></span>
         </div>
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
                     w-6 h-6 bg-black rounded-full z-10 transition hover:scale-125"></div>
@@ -89,7 +89,7 @@
       <div class="timeline-item relative flex justify-end">
         <div class="w-1/2 pl-8 text-left">
           <h4 class="uppercase">Odovzdávanie bytov</h4>
-          <span class="text-gray-600 font-[header-font] text-lg">Q4 2026</span>
+          <span class="text-gray-600 font-[header-font] text-lg"></span>
         </div>
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
                     w-6 h-6 border-1 border-black bg-white rounded-full z-10 transition hover:scale-125"></div>

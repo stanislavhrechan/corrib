@@ -4,13 +4,11 @@ namespace App\Http\Controllers\Corrib;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Building;
 use App\Models\Apartment;
-class BuildController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
-        $buildings = Building::with('parkings')->get();
 
         $apartments = Apartment::with('rooms')
             ->orderBy('floor_id', 'asc')
@@ -53,10 +51,7 @@ class BuildController extends Controller
                     'text' => 'vypredané',
                 ];
             });
-
-        return view('housepage', [
-            'buildings' => $buildings,
-            'apartments' => $apartments,
+        return view('index', [
             'floorStatuses' => $floorStatuses,
             'floorData' => $floorData,
         ]);

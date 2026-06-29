@@ -48,8 +48,8 @@ body, html {
 }
 
 
-.zone.sold:hover{
-  fill:#D9D9D9;
+.zone.sold{
+  fill:#e70000;
 }
 
 .zone-park {
