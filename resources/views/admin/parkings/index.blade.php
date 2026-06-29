@@ -27,7 +27,13 @@
 
                 <div>
                     <h2 class="text-white font-medium">
-                        {{ $building->name }}
+                        @if($building->name === 'Suteren')
+                            Suteren (parkovaci dom)
+                        @elseif($building->name === 'Prizemie')
+                            Prizemie (parkovaci dom)
+                        @else
+                            {{ $building->name }}
+                        @endif
                     </h2>
 
                     <p class="text-white/40 text-sm mt-1">

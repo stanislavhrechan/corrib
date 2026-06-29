@@ -17,7 +17,7 @@
 
 <body class="bg-[#0B0B0F] text-white overflow-hidden">
 
-<div class="relative flex h-screen">
+<div class="relative flex h-screen ">
 
     <aside class="absolute bottom-6 left-1/2 -translate-x-1/2 z-50">
 
@@ -84,7 +84,7 @@
 
     </aside>
 
-    <main class="flex-1 overflow-y-auto">
+    <main class="flex-1 overflow-y-auto pb-30">
 
         <div class="h-14 border-b border-white/10 flex items-center justify-between px-6">
 

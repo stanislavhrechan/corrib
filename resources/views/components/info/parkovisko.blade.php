@@ -37,9 +37,9 @@
             <div class=" mt-5 grid grid-cols-2 gap-2">
 
                 @for($i = 1; $i <= 60; $i++)
-
                     @php
-                        $parkingNumber = 'PM' . str_pad($i, 2, '0', STR_PAD_LEFT);
+                        $parkingNumber = 'PM' . $i;
+                        $parking = $von_statia->parkings->firstWhere('parking_number', $parkingNumber);
                     @endphp
 
                     <div class="flex items-center justify-between border border-neutral-200 bg-white px-5 py-2">
@@ -56,10 +56,20 @@
 
                         <div class="flex items-center gap-2">
 
-                            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+                            <span class="h-2.5 w-2.5 rounded-full
+                                @if($parking?->status === 'available')
+                                    bg-emerald-500
+                                @elseif($parking?->status === 'reserved')
+                                    bg-yellow-500
+                                @elseif($parking?->status === 'sold')
+                                    bg-red-500
+                                @else
+                                    bg-gray-400
+                                @endif
+                            "></span>
 
                             <span class="text-sm font-medium text-neutral-600">
-                                Voľné
+                                {{ $parking?->status_label ?? 'Neznámy stav' }}
                             </span>
 
                         </div>
