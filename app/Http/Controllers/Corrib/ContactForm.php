@@ -15,7 +15,14 @@ class ContactForm extends Controller
             'phone' => 'nullable|string|max:30',
             'message' => 'required|string',
         ]);
-        Mail::to('info@benard.sk')->send(new ContactMail($data));
+        Mail::to('info@benard.sk')
+        ->send(
+            (new ContactMail($data))
+                ->replyTo(
+                    $data['email'],
+                    $data['name']
+                )
+        );
         return back()->with('success', 'Správa bola odoslaná');
     }
 }

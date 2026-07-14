@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="{{ asset('style/style.css') }}?v={{ filemtime(public_path('style/style.css')) }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18302896873"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'AW-18302896873');
+    </script>
 </head>
 <body class="bg-[#E2E2E2]/25 relative">
     <x-main-component.black-header></x-main-component.black-header>
