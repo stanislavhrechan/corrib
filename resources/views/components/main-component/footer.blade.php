@@ -13,6 +13,16 @@
       <a href="#kontakt" class="hover:text-gray-400 transition font-[header-font] z-10">Kontakt</a>
     </nav>
 
+
+   <div class="flex justify-center items-center gap-5 mt-5">
+      <a href="https://www.instagram.com/corrib.tower?igsh=bmhoazNvZ2I0dzJm">
+        <i class="fa-brands fa-instagram text-2xl text-white"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1LtRJJj5eM/?mibextid=wwXIfr">
+        <i class="fa-brands fa-facebook text-2xl text-white"></i>
+      </a>
+    </div>
+
     <p class="text-center text-xs text-gray-300 mt-6 pb-6">
       Všetky práva vyhradené © {{date('Y')}} corrib.sk
     </p>

@@ -26,11 +26,11 @@ class ParkingAdminController extends Controller
         return back();
     }
 
-    public function show(Building $building)
-    {
+     public function show(Building $building)
+     {
         $building->load([
             'parkings' => function ($query) {
-                $query->orderBy('parking_number', 'asc');
+                $query->orderByRaw('LENGTH(parking_number), parking_number');
             }
         ]);
         

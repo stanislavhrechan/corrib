@@ -9,9 +9,9 @@
             data-name="{{ $apt->name }}"
             data-status="{{ $apt->status }}"
             data-area="{{ $apt->size }}"
-            @if($apt->status === 'free') 
+ 
                 data-url="/apartment/{{ $apt->slug }}"
-            @endif
+            
             fill-opacity="0.26"
         />
 
