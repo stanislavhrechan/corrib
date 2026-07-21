@@ -13,6 +13,7 @@ class ContactForm extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email',
             'phone' => 'nullable|string|max:30',
+            'message_poshodie_byt' => 'required|string',
             'message' => 'required|string',
         ]);
         Mail::to('info@benard.sk')

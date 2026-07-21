@@ -45,6 +45,11 @@
                             <hr style="border:none; border-top:1px solid #eee; margin:20px 0;">
 
                             <p style="margin:0;">
+                                <strong>Poschodie a byty, ktoré zaujali:</strong><br><br>
+                                {{ $data['message_poshodie_byt'] }}
+                            </p>
+
+                            <p style="margin:0;">
                                 <strong>Správa:</strong><br><br>
                                 {{ $data['message'] }}
                             </p>

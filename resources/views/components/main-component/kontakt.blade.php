@@ -21,6 +21,9 @@
           <input name="phone" type="tel" required placeholder="Tel. číslo*"
             class="w-full bg-white border border-gray-200 px-5 py-4 focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition">
 
+          <textarea name="message_poshodie_byt" required placeholder="Poschodie a byty, ktoré vás zaujali*"
+            class="w-full bg-white border border-gray-200 px-5 py-4 h-36 resize-none focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition"></textarea>
+
           <textarea name="message" required placeholder="Vaša správa*"
             class="w-full bg-white border border-gray-200 px-5 py-4 h-36 resize-none focus:ring-1 focus:ring-black/20 focus:border-black/20 outline-none transition"></textarea>
         </div>
@@ -59,7 +62,16 @@
             </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-         <div class="bg-white p-4  shadow-md hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer md:col-span-2 relative">
+          <div class="bg-white p-4  shadow-md hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer md:col-span-2 relative">
+           <div class="absolute top-5 right-5"><img src="../images/benardlogo 4.svg" class="w-25 md:w-45 h-full object-cover" alt=""></div>
+            <p class="text-sm text-gray-400">Predajca:</p>
+            <h3 class="font-bold text-lg">Rastislav Troščák</h3>
+            <div class="mt-4 text-sm">
+              <p class="font-bold"><span class="font-semibold mr-2">Telefón:</span>+421 905 111 158</p>
+              <p><span class="font-semibold mr-2">Email:</span>rastotroscak@benard.sk</p>
+            </div>
+          </div>
+          <div class="bg-white p-4  shadow-md hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer md:col-span-2 relative">
            <div class="absolute top-5 right-5"><img src="../images/benardlogo 4.svg" class="w-25 md:w-45 h-full object-cover" alt=""></div>
             <p class="text-sm text-gray-400">Hypotekárny špecialista:</p>
             <h3 class="font-bold text-lg">Ing. Zuzana Troščáková</h3>
