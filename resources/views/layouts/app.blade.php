@@ -26,6 +26,26 @@
 
         gtag('config', 'AW-18302896873');
     </script>
+
+
+    <script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18302896873/JqwUCK7avNgcEOmVwJdE',
+    'value': 1.0,
+    'currency': 'EUR',
+    'event_callback': callback
+  });
+
+  return false;
+}
+</script>
 </head>
 <body class="bg-[#E2E2E2]/25 relative">
     <x-main-component.black-header></x-main-component.black-header>

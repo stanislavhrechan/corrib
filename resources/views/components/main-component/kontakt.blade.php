@@ -7,7 +7,7 @@
     </p>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 mt-10 mx-5 md:mx-10 gap-5 ">
-    <form action="{{route('corrib.contact')}}" method="POST" class="bg-white p-5 md:p-10  shadow-lg space-y-6 border border-gray-100">
+    <form action="{{route('corrib.contact')}}" method="POST" onsubmit="gtag_report_conversion();"  class="bg-white p-5 md:p-10  shadow-lg space-y-6 border border-gray-100">
       @csrf
       <h2 class="font-[header-font] text-center text-2xl md:text-3xl">Chcete si dohodnúť obhliadku?</h2>
      
@@ -68,7 +68,7 @@
             <h3 class="font-bold text-lg">Rastislav Troščák</h3>
             <div class="mt-4 text-sm">
               <p class="font-bold"><span class="font-semibold mr-2">Telefón:</span>+421 905 111 158</p>
-              <p><span class="font-semibold mr-2">Email:</span>rastotroscak@benard.sk</p>
+              <p><span class="font-semibold mr-2">Email:</span>info@benard.sk</p>
             </div>
           </div>
           <div class="bg-white p-4  shadow-md hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer md:col-span-2 relative">

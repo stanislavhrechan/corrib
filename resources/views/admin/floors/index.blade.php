@@ -142,7 +142,7 @@
 <!-- ROOM PANEL -->
 <!-- ========================= -->
 <div id="roomPanel"
-     class="hidden fixed md:bottom-10 bottom-30 right-1/2 translate-x-1/2 md:right-10 w-80 p-5  bg-[#111] border border-white/10">
+     class="hidden fixed bottom-10 z-60  right-10  w-80 p-5  bg-[#111] border border-white/10">
 
     <div class="flex justify-between">
         <h3 id="panelRoomNumber" class="text-lg"></h3>
